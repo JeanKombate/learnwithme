@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jean Dev - Accueil</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/a6570374af02fb1f1f425fef2752706c.jpg" type="image/x-icon">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Jean Dev</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="cours.html">Cours & TD</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Bienvenue sur ma page de présentation</h1>
+        <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:20px;">
+            <img src="img\téléchargement.jpeg" alt="Ma photo" style="width:200px; border-radius:12px;">
+            <p style="max-width:500px;">
+                Bonjour, je me nomme Jean. Je suis passionné de technologie et d'informatique, particulièrement de l'intelligence artificielle. 
+                Je suis étudiant en informatique et j'aime partager mes connaissances et apprendre chaque jour de nouvelles choses.
+            </p>
+        </div>
+
+        <h2>Contactez-moi</h2>
+        <form action="https://formsubmit.co/k2007.jean@gmail.com" method="POST" class="contact-form" onsubmit="return showConfirmation()">
+            <input type="email" name="email" placeholder="Votre e-mail" required>
+            <button type="submit" class="submit-btn">Envoyer</button>
+        </form>
+        <div id="confirmation" class="confirmation-message">Message envoyé avec succès ✅</div>
+    </div>
+
+    <footer>
+        <p>© 2025 Jean Dev – Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        function showConfirmation() {
+            const msg = document.getElementById("confirmation");
+            msg.style.display = "block";
+            setTimeout(() => { msg.style.display = "none"; }, 4000);
+            return false;
+        }
+    </script>
+
+</body>
+</html>

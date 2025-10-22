@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jean Dev - Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/a6570374af02fb1f1f425fef2752706c.jpg" type="image/x-icon">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Jean Dev</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="cours.html">Cours & TD</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Inscription / Contact</h1>
+        <form action="https://formsubmit.co/k2006.jean@gmail.com" method="POST" class="contact-form" onsubmit="return showConfirmation()">
+            <input type="text" name="nom" placeholder="Nom" required>
+            <input type="text" name="prenom" placeholder="Prénom" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="classe" placeholder="Classe (ex: 3e, Terminale...)" required>
+            <textarea name="message" placeholder="Ton message ici..." required></textarea>
+            <button type="submit" class="submit-btn">Envoyer</button>
+        </form>
+        <div id="confirmation" class="confirmation-message">Message envoyé avec succès ✅</div>
+    </div>
+
+    <footer>
+        <p>© 2025 Jean Dev – Merci pour votre visite.</p>
+    </footer>
+
+    <script>
+        function showConfirmation() {
+            const msg = document.getElementById("confirmation");
+            msg.style.display = "block";
+            setTimeout(() => { msg.style.display = "none"; }, 4000);
+            return false;
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = "https://waaatfhcjuosaarstpdo.supabase.co"; // ton URL
+  const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndhYWF0ZmhjanVvc2FhcnN0cGRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjEwNTgwMTQsImV4cCI6MjA3NjYzNDAxNH0.ZJh7y4W7vLjkePT4LYRRb7ON-NJJEVECuJY_182U0lE"; // ta clé publique
+  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+</script>
+
+
+</body>
+</html>

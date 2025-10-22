@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jean Dev - Cours & TD</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/a6570374af02fb1f1f425fef2752706c.jpg" type="image/x-icon">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Jean Dev</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="cours.html">Cours & TD</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Mes Cours & Travaux Dirigés</h1>
+
+        <section id="matieres">
+            <h2>Les matières disponibles</h2>
+            <div class="matiere-list">
+                <div>🔢<br>Maths</div>
+                <div>🧪<br>Physique</div>
+                <div>🌿<br>SVT</div>
+            </div>
+        </section>
+
+        <section id="formats">
+            <h2>Formats disponibles</h2>
+            <ul style="text-align:center; list-style:none; padding:0;">
+                <li>📄 Fichiers PDF téléchargeables</li>
+                <li>🎥 Vidéos explicatives (à venir)</li>
+                <li>📝 Exercices interactifs (bientôt disponibles)</li>
+            </ul>
+        </section>
+
+        <section id="pourquoi">
+            <h2>Pourquoi suivre mes TD ?</h2>
+            <p>
+                ✅ Des explications simples<br> ✅ Adaptées au programme scolaire<br> ✅ Exercices progressifs<br> ✅ Accessible gratuitement
+            </p>
+        </section>
+
+        <section id="telechargement">
+            <h2>Téléchargements</h2>
+            <ul style="text-align:center; list-style:none; padding:0;">
+                <li><a href="#" class="download-link">📥 Mathématiques - Niveau 2nde</a></li>
+                <li><a href="#" class="download-link">📥 Physique - Niveau 1ère</a></li>
+                <li><a href="#" class="download-link">📥 SVT - Niveau Terminale</a></li>
+            </ul>
+        </section>
+    </div>
+    
+        <!-- Message qui s’affiche quand on clique -->
+        <div id="alert-message">⚠️ Les vidéos ne sont pas encore disponibles !</div>
+    </div>
+
+
+    <footer>
+        <p>© 2025 Jean Dev – Partageons le savoir.</p>
+    </footer>
+
+    <script>
+         // Sélectionne tous les liens de téléchargement
+        const links = document.querySelectorAll('.download-link');
+        const alertMessage = document.getElementById('alert-message');
+
+        // Ajoute un événement de clic sur chaque lien
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Empêche le lien de s’ouvrir
+                alertMessage.style.display = 'block'; // Affiche le message
+
+                // Cache le message après 4 secondes
+                setTimeout(() => {
+                    alertMessage.style.display = 'none';
+                }, 4000);
+            });
+        });
+    </script>
+</body>
+</html>
