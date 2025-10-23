@@ -43,12 +43,37 @@
             return false;
         }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+ <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  const SUPABASE_URL = "https://waaatfhcjuosaarstpdo.supabase.co"; // ton URL
-  const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndhYWF0ZmhjanVvc2FhcnN0cGRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjEwNTgwMTQsImV4cCI6MjA3NjYzNDAxNH0.ZJh7y4W7vLjkePT4LYRRb7ON-NJJEVECuJY_182U0lE"; // ta clé publique
-  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  const SUPABASE_URL = "https://wqqyshlcixqfoqcmkwwy.supabase.co";
+  const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxcXlzaGxjaXhxZm9xY21rd3d5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA5OTM4NDcsImV4cCI6MjA3NjU2OTg0N30.7QBe6uky8ooqaKUVODu8FIHpL74xL3eGuPxuiMM4MoY";
+
+  const { createClient } = supabase;
+  const db = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  const form = document.querySelector(".contact-form");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const nom = form.nom.value;
+    const prenom = form.prenom.value;
+    const email = form.email.value;
+    const classe = form.classe.value;
+    const message = form.message.value;
+
+    const { data, error } = await db
+      .from("contacts")
+      .insert([{ nom, prenom, email, classe, message }]);
+
+    if (error) {
+      alert("❌ Erreur : " + error.message);
+    } else {
+      alert("✅ Message enregistré dans Supabase !");
+      form.reset();
+    }
+  });
 </script>
+
 
 
 </body>
